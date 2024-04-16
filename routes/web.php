@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $productos = [
+    ["nombre" => "producto 1", "precio" => 100],
+    ["nombre" => "producto 2", "precio" => 200],
+    ["nombre" => "producto 3", "precio" => 300],
+    ["nombre" => "producto 4", "precio" => 400],
+    ["nombre" => "producto 5", "precio" => 500],
+    ];
+    $nombre = "Jhoan Loaiza";
+    return view('welcome', ["productos" => $productos], ["nombre" => $nombre]);
 });
+//Route:: view("/contacto", "contacto");
+    
