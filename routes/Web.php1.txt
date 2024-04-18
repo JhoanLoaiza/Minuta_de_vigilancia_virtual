@@ -26,4 +26,3 @@ Route::get('/', function () {
 });
 //Route:: view("/contacto", "contacto");
     
-
