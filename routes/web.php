@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     $botonesdenavegacion = [
     ["nombre" => "Inicio"],
-    ["nombre" => "formatos"],
-    ["nombre" => "Constancias"],
-    ["nombre" => "Utilitarios"],
-    ["nombre" => "Salir"],
+   
     ];
     $nombre = "";
     return view('welcome', ["botonesdenavegacion" => $botonesdenavegacion], ["nombre" => $nombre]);
