@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class= "text-end text-md text-green-500">
-            Bienvenido {{ $nombre }}!
+            Bienvenido!
         </div>
       </header>
 </div></body></html>
@@ -79,7 +79,7 @@ width="80px"/>
         <header>
             
             <div class= "text-end text-md text-green-500 " >
-                Bienvenido {{ $nombre }}!
+                Bienvenido!
             </div>
             
           </body></html>
@@ -147,7 +147,7 @@ width="80px"/>
         <header>
             
             <div class= "text-center text-md text-green-500 " >
-                Bienvenido {{ $nombre }}!
+                Bienvenido!
             </div>
             
           </body></html>

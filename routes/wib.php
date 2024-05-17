@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\InstitucionalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,9 @@ use App\Http\Controllers\PersonalController;
 
 Route::view('/', 'welcome');
 
-Route::get('personals', [PersonalController::class, 'index'])->name('personals.index');
+Route::get('institucionals', [InstitucionalController::class, 'index'])->name('institucionals.index');
+
+
 
 
 
@@ -31,5 +33,3 @@ Route::get('/', function () {
     return view('welcome', ["botonesdenavegacion" => $botonesdenavegacion], ["nombre" => $nombre]);
 });
 //Route:: view("/contacto", "contacto");
-    
-
