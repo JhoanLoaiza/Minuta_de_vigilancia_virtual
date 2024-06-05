@@ -16,10 +16,9 @@ use App\Http\Controllers\PersonalController;
 
 Route::view('/', 'welcome');
 
-Route::get('personals', [PersonalController::class, 'index'])->name('personals.index');
-
-
-
+//CRUD de Personals
+Route::resource('personals', PersonalController::class); //crear 7 rutas para CRUD 
+//route::get('personal', [PersonalController::class, 'index']);
 
 
 Route::get('/', function () {

@@ -10,10 +10,12 @@ class PersonalController extends Controller
     /**
      * Display a listing of the resource.
      */
+    //<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-6">
+
     public function index()
     {
         $personals = Personal::all();
-        return view('personals.index', compact ('personals'));  
+        return view('personals.index', compact('personals'));  
     }
 
     /**
@@ -21,7 +23,7 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        //
+        return view('personals.create');
     }
 
     /**
@@ -29,7 +31,9 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        Personal::create($request->all());
+        return redirect()->route('personals.index');
     }
 
     /**
@@ -45,7 +49,7 @@ class PersonalController extends Controller
      */
     public function edit(Personal $personal)
     {
-        //
+        return view('personals.edit', compact('personal'));
     }
 
     /**
@@ -53,14 +57,16 @@ class PersonalController extends Controller
      */
     public function update(Request $request, Personal $personal)
     {
-        //
+        $personal->update($request->all());
+        return redirect()->route('personals.index');
     }
 
     /**
      * Remove the specified resource from storage.
-     */
+     */ 
     public function destroy(Personal $personal)
     {
-        //
+        $personal->delete(); 
+        return redirect()->route('personals.index');
     }
 }

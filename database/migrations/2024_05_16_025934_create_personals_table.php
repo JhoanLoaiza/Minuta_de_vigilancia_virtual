@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('apellidos');
             $table->string('grado');
             $table->integer('placa');
+            $table->string('numero_arma');
+            $table->integer('sigla_vehiculo');
+            $table->integer('chaleco_balistico');
+            $table->string('lugar_de_faccion');
+            $table->string('mision_por_cumplir');
             $table->timestamps();
         });
     }
