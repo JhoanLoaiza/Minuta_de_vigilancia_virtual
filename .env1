@@ -1,8 +1,8 @@
-APP_NAME=Laravel
+APP_NAME=minuta_de_vigilancia_virtual
 APP_ENV=local
-APP_KEY=
+APP_KEY=base64:QsbMHT7ktzANjHjS2U1FQwuT0jt3FykskwZF50dqvD0=
 APP_DEBUG=true
-APP_URL=http://localhost
+APP_URL=http://minuta_de_vigilancia_virtual.test 
 
 LOG_CHANNEL=stack
 LOG_DEPRECATIONS_CHANNEL=null
