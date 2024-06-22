@@ -17,7 +17,7 @@ use App\Http\Controllers\PersonalController;
 Route::view('/', 'welcome')->name('home');
 
 //CRUD de Personals
-oute::resource('personals', PersonalController::class)->middleware('auth');
+Route::resource('personals', PersonalController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
