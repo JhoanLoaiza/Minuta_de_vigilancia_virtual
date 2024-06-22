@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PersonalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,21 +14,18 @@ use App\Http\Controllers\PersonalController;
 |
 */
 
-Route::view('/', 'welcome');
-
-//CRUD de Personals
-Route::resource('personals', PersonalController::class); //crear 7 rutas para CRUD 
-//route::get('personal', [PersonalController::class, 'index']);
-
-
 Route::get('/', function () {
-    $botonesdenavegacion = [
-    ["nombre" => "Inicio"],
-   
-    ];
-    $nombre = "";
-    return view('welcome', ["botonesdenavegacion" => $botonesdenavegacion], ["nombre" => $nombre]);
+    return view('welcome');
 });
-//Route:: view("/contacto", "contacto");
-    
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

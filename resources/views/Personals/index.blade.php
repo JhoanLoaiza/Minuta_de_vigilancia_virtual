@@ -4,7 +4,8 @@
  
     @foreach ($personals as $personal)
        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure><img src="https://source.unsplash.com/random/800x600/?policeman&{{ $personal->nombres}} " alt= "{{$personal->nombres}}" /></figure>
+          {{-- <figure><img src="https://source.unsplash.com/random/800x600/?technology&{{ $producto->nombre }}" alt="{{ $producto->nombre }}" /></figure> --}}
+          <figure><img src="https://loremflickr.com/200/200/store&{{ $personal->nombres}} " alt= "{{$personal->nombres}}" /></figure>
              <div class="card-body">
                <h2 class="card-title">
                  {{ $personal->nombres }} 
