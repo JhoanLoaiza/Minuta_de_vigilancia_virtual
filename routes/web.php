@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PersonalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome')->name('home');
+
+//CRUD de Personals
+oute::resource('personals', PersonalController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
