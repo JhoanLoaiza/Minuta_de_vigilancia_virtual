@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('titulo', 'Consultar personals')
 @section('contenido')
- 
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-6">
     @foreach ($personals as $personal)
        <div class="card w-96 bg-base-100 shadow-xl">
           {{-- <figure><img src="https://source.unsplash.com/random/800x600/?technology&{{ $producto->nombre }}" alt="{{ $producto->nombre }}" /></figure> --}}
@@ -22,6 +22,7 @@
                 <div class="badge badge-outline">Lugar de Facción: {{ $personal->lugar_de_faccion}} </div> 
                 <div class="badge badge-outline">Misión por Cumplir: {{ $personal->mision_por_cumplir}} </div> 
 
+
                 <a href="{{route('personals.edit', $personal->id)}}" class="btn btn-xs btn-secondary">Editar</a>
                 <form action="{{ route('personals.destroy', $personal->id) }}" method="POST">
                    @csrf
@@ -33,9 +34,12 @@
            </div>
        </div>
 
+
         @endforeach
-    
+</div>
 @endsection
+    
+
 
 
 
